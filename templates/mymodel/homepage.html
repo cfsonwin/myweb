@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mymodel/homepage.css' %}">
+
+</head>
+<body>
+    <h2>Homepage</h2>
+    <a  href="{% url 'mshow_table' %}">Link to User Infomation Management</a>
+</body>
+</html>

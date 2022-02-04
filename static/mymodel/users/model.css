@@ -1,0 +1,29 @@
+body {
+	font-size: 30px;
+
+	background-color: lightblue;
+	text-align: center;
+}
+table.test {
+	border:2px solid #3F3F3F;
+	background-color: #99FFCC;
+	width:60%;
+	margin:auto;
+}
+
+table.test th{
+	border:1px solid #3F3F3F;
+	background-color: #66CCFF;
+
+
+}
+
+table.test td{
+	border:1px solid #3F3F3F;
+	padding:5px 30px 5px 10px;
+}
+
+table.test caption{
+	font-size: 15px;
+	color: blue;
+}

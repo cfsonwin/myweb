@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mymodel/users/model.css' %}">
+
+</head>
+<body>
+    <h3>Edit user information</h3>
+    <a href="{% url 'mshow_table' %}" style="font-size: 15px">back to MyModel</a>
+    <form action="{% url 'mupdate_user'%}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{ user.id }}">
+        <table class="test">
+        <tr>
+            <th>id</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th>name</th>
+            <td><input type="text" name="name" value="{{ user.name }}"/></td>
+        </tr>
+        <tr>
+            <th>age</th>
+            <td><input type="number" name="age" value="{{ user.age }}"/></td>
+        </tr>
+        <tr>
+            <th>phone number</th>
+            <td><input type="text" name="phone" value="{{ user.phone }}"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </td>
+        </tr>
+        </table>
+
+    </form>
+</body>
+</html>

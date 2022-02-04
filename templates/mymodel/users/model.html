@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyModel</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mymodel/users/model.css' %}">
+</head>
+<body>
+    <h2>User Infomation Management</h2>
+    <a href="{% url 'my_model' %}" style="font-size: 15px">back to home page</a>
+    <b style="font-size: 15px">|</b>
+    <a href="{% url 'mshow_add_new_user' %}" style="font-size: 15px">add new user</a>
+    <hr/>
+    <table class="test">
+        <tr>
+            <th>ID</th>
+            <th>name</th>
+            <th>age</th>
+            <th>phone number</th>
+            <th>add time</th>
+            <th>option</th>
+        </tr>
+
+        {% for user in userlist %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.addtime}}</td>
+            <td>
+                <a href="{% url 'mshow_update_user' user.id %}">Update</a>
+                |
+                <a href="{% url 'mdel_user' user.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
