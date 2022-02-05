@@ -1,0 +1,9 @@
+body {
+	font-size: 20px;
+	background-color: lightblue;
+	text-align: center;
+}
+
+.left {
+  text-align: left;
+}
