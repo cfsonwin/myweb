@@ -1,15 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Django view</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myview/myviewhp.css' %}">
+
 </head>
 <body>
     <h2>Django view</h2>
-    <ul>
-        <li><a href="{% url 'mv_resp01' %}">first link</a></li>
-        <li><a href="{% url 'mv_resp404' %}">page not found</a></li>
-        <li><a href="{% url 'mv_respred' %}">redirect to myapp</a></li>
-    </ul>
+    <div class="left">
+        <ul>
+            <li><a href="{% url 'mv_resp01' %}">first link</a></li>
+            <li><a href="{% url 'mv_resp404' %}">page not found</a></li>
+            <li><a href="{% url 'mv_respred' %}">redirect to mymodel</a></li>
+            <li><a href="{% url 'mv_viewclass' %}">rewrite view class test</a></li>
+            <li>
+                <form action="{% url 'mv_map' hash_now%}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="id" value="{{ user.id }}">
+                    <input type="submit" value="go to map">
+                </form>
+            </li>
+
+        </ul>
+    </div>
+
 </body>
 </html>

@@ -7,5 +7,6 @@ urlpatterns = [
     path('resp01', resp01, name='mv_resp01'),
     path('resp404', resp404, name='mv_resp404'),
     path('respred', respred, name='mv_respred'),
-
+    path('viewclass', MyView.as_view(), name='mv_viewclass'),
+    path('mymap/<str:hash_now>', map_plot, name='mv_map'),
 ]
